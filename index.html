@@ -1,84 +1,492 @@
 <!DOCTYPE html>
-<html lang="fr" class="h-full overflow-y-auto">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathilde Martine PAISLEY | Conseil RH & Paie - Accueil</title>
-    <meta name="description" content="Mathilde Martine PAISLEY : Votre consultante experte en Paie, GTA, RH & SIRH. Optimisez vos processus, garantissez la conformité sociale et pilotez votre transformation RH.">
-    <meta name="keywords" content="Mathilde Martine PAISLEY, consultante RH, conseil paie, GTA, SIRH, ressources humaines, conformité sociale, gestion des temps, expertise RH, accompagnement SIRH, conseil pour les affaires, conseil de gestion, 7022Z">
-    <meta name="author" content="Mathilde Martine PAISLEY">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='80%25' font-size='80' text-anchor='middle'%3E🌹%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+    <title>Mathilde Martine PAISLEY | Coordinatrice Paie & SIRH</title>
+    <meta name="description" content="Portfolio de Mathilde Martine PAISLEY - Coordinatrice Paie & Conformité Sociale, Spécialiste SIRH. 20 ans d'expérience.">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Configuration des couleurs personnalisées -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cta: '#D9A526',       /* Jaune - Boutons CTA */
+                        titre: '#0F2C48',     /* Bleu - Titres & Séparations */
+                        surface: '#F6F2E8',   /* Ivoire - Surfaces / Cartes */
+                        alerte: '#B4792A',    /* Bronze - Alertes */
+                        texte: '#333333',
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica', 'Arial', 'sans-serif'],
+                        serif: ['Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Styles personnalisés supplémentaires */
+        body {
+            background-color: #F6F2E8; /* Couleur surface par défaut */
+            color: #333333;
+        }
+        
+        .section-hidden {
+            display: none;
+        }
+        
+        .section-visible {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .nav-link.active {
+            color: #D9A526;
+            border-bottom: 2px solid #D9A526;
+        }
+
+        /* Effet sur les photos */
+        .profile-photo {
+            border: 4px solid #D9A526;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Séparateurs */
+        .separator {
+            height: 4px;
+            width: 60px;
+            background-color: #0F2C48;
+            margin: 1.5rem auto;
+            border-radius: 2px;
+        }
+    </style>
 </head>
-<body class="flex flex-col min-h-screen bg-accueil-bg">
+<body class="flex flex-col min-h-screen">
 
-    <header class="bg-principal-fonce text-fond-clair p-4 shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center header-content-wrapper">
-            <a href="index.html" class="header-logo-link">
-                <img src="assets/logo-header.jpeg" alt="Logo MMPA" class="header-logo">
-                <span class="text-xl font-bold text-gradient-gold">Mathilde Martine PAISLEY</span>
-            </a>
-            <nav class="hidden md:flex space-x-6">
-                <a href="a-propos.html" class="nav-link hover:text-accent-secondaire">À Propos</a>
-                <a href="mes-offres.html" class="nav-link hover:text-accent-secondaire">Mes Offres</a>
-                <a href="realisations.html" class="nav-link hover:text-accent-secondaire">Mes Réalisations</a>
-                <a href="cv.html" class="nav-link hover:text-accent-secondaire">Curriculum Vitae</a>
-                <a href="actualites.html" class="nav-link hover:text-accent-secondaire">Actualités</a>
-                <a href="essentiels.html" class="nav-link hover:text-accent-secondaire">Essentiels</a>
-                <a href="planning.html" class="nav-link hover:text-accent-secondaire">Planning</a>
-                <a href="contact.html" class="nav-link hover:text-accent-secondaire">Contact</a>
-            </nav>
-            <button id="mobile-menu-button" class="md:hidden text-fond-clair focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
-                </svg>
-            </button>
-        </div>
-        <nav id="mobile-menu" class="md:hidden bg-principal-fonce pt-2 hidden">
-            <a href="a-propos.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">À Propos</a>
-            <a href="mes-offres.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Offres</a>
-            <a href="realisations.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Réalisations</a>
-            <a href="cv.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Curriculum Vitae</a>
-            <a href="actualites.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Actualités</a>
-            <a href="essentiels.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Essentiels</a>
-            <a href="planning.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Planning</a>
-            <a href="contact.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Contact</a>
-        </nav>
-    </header>
-
-    <main class="flex-grow page-content-wrapper">
-        <section id="accueil" class="content-section text-center py-20 px-4 md:px-8 lg:px-16 flex flex-col items-center justify-center min-h-screen-75">
-            <div class="max-w-3xl mx-auto">
-                <!-- Logo ici -->
-                <img src="assets/logo.jpeg" alt="Logo MMPA Consulting" class="logo-accueil-main mx-auto mb-6 h-auto animate-fadeInUp">
-                
-                <h1 class="text-5xl md:text-6xl font-extrabold text-principal-fonce leading-tight mb-4 animate-fadeInUp">
-                    Votre Conformité Sociale, <span class="text-gradient-gold block md:inline">Ma Stratégie Digitale RH.</span>
-                </h1>
-                <p class="accueil-intro-paragraph text-texte-principal mb-8 animate-fadeInUp delay-200 text-justify">
-                    En qualité de consultante, je mets à votre disposition deux décennies d'expertise forgées aux avant-postes de la Paie, des RH et des Systèmes d'Information (SIRH). Mon objectif est clair : garantir la conformité sociale de votre entreprise grâce à ma maîtrise de la coordination & pilotage de la paie et de l'administration & gestion des temps. Apte à piloter des projets SIRH, de l'analyse des besoins à l'accompagnement au changement, je suis votre partenaire pour transformer les défis réglementaires et opérationnels en opportunités d'optimisation et de croissance.
-                </p>
-                <div class="space-y-4 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row justify-center animate-fadeInUp delay-400">
-                    <a href="planning.html" class="btn-primary">Réserver un rendez-vous</a>
-                    <a href="mes-offres.html" class="btn-secondary">Découvrir mes offres</a>
+    <!-- HEADER -->
+    <header class="bg-titre text-surface sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo Header -->
+            <div class="flex items-center cursor-pointer" onclick="showSection('accueil')">
+                <img src="https://projettechacademy.github.io/Projet_Python/Asset/2127845D-F95D-49C0-A22B-88C07817841B.png" 
+                     alt="Logo MMPA" 
+                     class="h-12 w-auto mr-3 bg-white rounded-full p-1 object-contain">
+                <div>
+                    <h1 class="font-bold text-lg md:text-xl leading-tight text-cta">Mathilde Martine PAISLEY</h1>
+                    <p class="text-xs text-gray-300">Coordinatrice Paie & SIRH</p>
                 </div>
             </div>
-            <div class="mt-12 w-full max-w-xl text-principal-fonce text-lg animate-fadeInUp delay-600">
-                <p class="mb-2">Vos RH s'épanouissent, votre Paie s'optimise, votre SIRH s'illumine. Ensemble, transformons l'essai en succès !</p>
+
+            <!-- Navigation Desktop -->
+            <nav class="hidden md:flex space-x-6">
+                <button onclick="showSection('accueil')" class="nav-link font-medium hover:text-cta transition duration-300 py-2">Accueil</button>
+                <button onclick="showSection('cv')" class="nav-link font-medium hover:text-cta transition duration-300 py-2">Mon CV</button>
+                <button onclick="showSection('realisations')" class="nav-link font-medium hover:text-cta transition duration-300 py-2">Réalisations</button>
+                <button onclick="showSection('liens')" class="nav-link font-medium hover:text-cta transition duration-300 py-2">Ressources & Liens</button>
+                <button onclick="showSection('contact')" class="nav-link font-medium hover:text-cta transition duration-300 py-2">Contact</button>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-cta focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-titre border-t border-gray-700">
+            <button onclick="showSection('accueil'); toggleMobileMenu()" class="block w-full text-left px-4 py-3 hover:bg-gray-800">Accueil</button>
+            <button onclick="showSection('cv'); toggleMobileMenu()" class="block w-full text-left px-4 py-3 hover:bg-gray-800">Mon CV</button>
+            <button onclick="showSection('realisations'); toggleMobileMenu()" class="block w-full text-left px-4 py-3 hover:bg-gray-800">Réalisations</button>
+            <button onclick="showSection('liens'); toggleMobileMenu()" class="block w-full text-left px-4 py-3 hover:bg-gray-800">Ressources & Liens</button>
+            <button onclick="showSection('contact'); toggleMobileMenu()" class="block w-full text-left px-4 py-3 hover:bg-gray-800">Contact</button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+
+        <!-- SECTION: ACCUEIL -->
+        <section id="accueil" class="section-visible">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-10 py-10">
+                <!-- Photo -->
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <img src="https://projettechacademy.github.io/Projet_Python/Asset/Photo_Mathilde_Martine_PAISLEY.jpeg" 
+                         alt="Mathilde Martine PAISLEY" 
+                         class="profile-photo rounded-full w-64 h-64 object-cover">
+                </div>
+                
+                <!-- Intro Text -->
+                <div class="w-full md:w-2/3 text-center md:text-left">
+                    <h2 class="text-4xl font-bold text-titre mb-2">Mathilde Martine PAISLEY</h2>
+                    <h3 class="text-2xl text-alerte font-serif italic mb-6">Coordinatrice Paie & Conformité Sociale</h3>
+                    
+                    <p class="text-lg mb-6 leading-relaxed">
+                        Spécialiste Paie, Conseil RH & Digitalisation des Processus avec <strong>20 ans d'expérience</strong> en gestion et conformité sociale.
+                    </p>
+                    <p class="mb-8 text-gray-700">
+                        Profil hybride RH & Paie, à la croisée de la gestion opérationnelle, de la conformité sociale et de la digitalisation des processus. Rigueur, curiosité et sens du partage sont mes moteurs pour clarifier ce qui semble complexe et rendre les équipes plus autonomes.
+                    </p>
+
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <a href="https://projettechacademy.github.io/CV_MMPA-CV-Mathilde-Martine-PAISLEY/" target="_blank" class="bg-cta text-white font-bold py-3 px-8 rounded hover:bg-yellow-600 transition shadow-md">
+                            Voir mon CV détaillé
+                        </a>
+                        <button onclick="showSection('contact')" class="border-2 border-titre text-titre font-bold py-3 px-8 rounded hover:bg-titre hover:text-white transition">
+                            Me contacter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Highlights -->
+            <div class="grid md:grid-cols-3 gap-6 mt-12">
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-cta">
+                    <i class="fas fa-calculator text-3xl text-titre mb-4"></i>
+                    <h3 class="text-xl font-bold text-titre mb-2">Paie & Conformité</h3>
+                    <p class="text-sm">Supervision et fiabilisation de la paie (250 à 1 200 salariés), DSN, cotisations sociales et veille réglementaire.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-cta">
+                    <i class="fas fa-laptop-code text-3xl text-titre mb-4"></i>
+                    <h3 class="text-xl font-bold text-titre mb-2">SIRH & Digital</h3>
+                    <p class="text-sm">AMOA, recette, mise en production et support utilisateurs sur HR Access, SAP, Cegid, et Chronotime.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-cta">
+                    <i class="fas fa-users text-3xl text-titre mb-4"></i>
+                    <h3 class="text-xl font-bold text-titre mb-2">Conseil & Formation</h3>
+                    <p class="text-sm">Accompagnement au changement, rédaction de procédures, transfert de compétences et management de transition.</p>
+                </div>
             </div>
         </section>
+
+        <!-- SECTION: CV -->
+        <section id="cv" class="section-hidden">
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-titre text-center">Curriculum Vitae</h2>
+                <div class="separator"></div>
+
+                <!-- Expériences -->
+                <h3 class="text-2xl font-bold text-cta mb-6 border-b pb-2"><i class="fas fa-briefcase mr-2"></i> Expériences Professionnelles</h3>
+                
+                <div class="space-y-8">
+                    <!-- Nexpublica -->
+                    <div>
+                        <div class="flex flex-col md:flex-row justify-between items-baseline">
+                            <h4 class="text-xl font-bold text-titre">Référente Fonctionnelle SIRH (Chronotime)</h4>
+                            <span class="text-alerte font-semibold">Déc. 2024 – Mai 2025</span>
+                        </div>
+                        <p class="font-semibold text-gray-600">Nexpublica</p>
+                        <ul class="list-disc list-inside mt-2 text-gray-700 text-sm space-y-1">
+                            <li>Recueil des besoins, rédaction de spécifications et animation d'ateliers utilisateurs.</li>
+                            <li>Accompagnement des clients dans l'implémentation et la prise en main de l'outil.</li>
+                            <li>Coordination avec les équipes techniques et suivi des évolutions.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Ponticelli -->
+                    <div>
+                        <div class="flex flex-col md:flex-row justify-between items-baseline">
+                            <h4 class="text-xl font-bold text-titre">Coordonnatrice SIRH / Chef de projet fonctionnelle</h4>
+                            <span class="text-alerte font-semibold">Sept. 2024 – Nov. 2024</span>
+                        </div>
+                        <p class="font-semibold text-gray-600">Groupe Ponticelli Frères</p>
+                        <ul class="list-disc list-inside mt-2 text-gray-700 text-sm space-y-1">
+                            <li>Participation à la refonte du SIRH sur SAP et SuccessFactors.</li>
+                            <li>Organisation de la recette et suivi des anomalies.</li>
+                            <li>Lien entre les équipes RH et la DSI jusqu'à la mise en production.</li>
+                        </ul>
+                    </div>
+
+                    <!-- CGI -->
+                    <div>
+                        <div class="flex flex-col md:flex-row justify-between items-baseline">
+                            <h4 class="text-xl font-bold text-titre">Consultante Fonctionnelle Paie / AMOA SIRH</h4>
+                            <span class="text-alerte font-semibold">Janv. 2023 – Juin 2024</span>
+                        </div>
+                        <p class="font-semibold text-gray-600">CGI (Clients Secteur Public & Industriel)</p>
+                        <ul class="list-disc list-inside mt-2 text-gray-700 text-sm space-y-1">
+                            <li>Accompagnement sur HR Access et Workday pour moderniser la paie.</li>
+                            <li>Création de scripts, suivi des anomalies et mise à jour du référentiel paie.</li>
+                            <li>Formation et support utilisateurs sur les outils SIRH.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Talent Solutions -->
+                    <div>
+                        <div class="flex flex-col md:flex-row justify-between items-baseline">
+                            <h4 class="text-xl font-bold text-titre">Chargée RH - Coordination Paie & Admin.</h4>
+                            <span class="text-alerte font-semibold">Juil. 2022 – Déc. 2022</span>
+                        </div>
+                        <p class="font-semibold text-gray-600">Talent Solutions</p>
+                        <ul class="list-disc list-inside mt-2 text-gray-700 text-sm space-y-1">
+                            <li>Gestion de la paie et de l'administration du personnel (350 salariés).</li>
+                            <li>Optimisation des process et fiabilisation des données RH.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Epi-Use -->
+                    <div>
+                        <div class="flex flex-col md:flex-row justify-between items-baseline">
+                            <h4 class="text-xl font-bold text-titre">Consultante Paie SIRH</h4>
+                            <span class="text-alerte font-semibold">Nov. 2018 – Mars 2022</span>
+                        </div>
+                        <p class="font-semibold text-gray-600">Epi-Use France</p>
+                        <ul class="list-disc list-inside mt-2 text-gray-700 text-sm space-y-1">
+                            <li>Participation à la mise en place d'un CSP (Centre de Services Partagés).</li>
+                            <li>Structuration des processus, création de procédures et rédaction du livre blanc paie.</li>
+                        </ul>
+                    </div>
+
+                     <!-- Multi Sociétés -->
+                     <div>
+                        <div class="flex flex-col md:flex-row justify-between items-baseline">
+                            <h4 class="text-xl font-bold text-titre">Chargée de Paie</h4>
+                            <span class="text-alerte font-semibold">Avril 2008 – Oct. 2018</span>
+                        </div>
+                        <p class="font-semibold text-gray-600">Multi Sociétés (Nexans, ADP, Sanofi, etc.)</p>
+                        <p class="text-sm mt-2 text-gray-700">Gestion complète de la paie (250 à 1 200 salariés), optimisation des processus, déclarations sociales sur divers environnements (SAP, ADP, Cegid).</p>
+                    </div>
+                </div>
+
+                <!-- Formations -->
+                <h3 class="text-2xl font-bold text-cta mt-10 mb-6 border-b pb-2"><i class="fas fa-graduation-cap mr-2"></i> Formations</h3>
+                <div class="space-y-4">
+                    <div>
+                        <p class="font-bold text-titre">Gestion de la Paie et Conformité Sociale</p>
+                        <p class="text-sm text-gray-600">STUDI (RNCP Niv 5) | 2025 - 2026</p>
+                    </div>
+                    <div>
+                        <p class="font-bold text-titre">Transformation Digitale et Management de l'Innovation</p>
+                        <p class="text-sm text-gray-600">DIGITAL CAMPUS (RNCP Niv 7) | 2024 - 2025</p>
+                    </div>
+                    <div>
+                        <p class="font-bold text-titre">Manager en Ressources Humaines</p>
+                        <p class="text-sm text-gray-600">ESGRH (RNCP Niv 7) | 2022 - 2023</p>
+                    </div>
+                </div>
+
+                <!-- Outils -->
+                <h3 class="text-2xl font-bold text-cta mt-10 mb-6 border-b pb-2"><i class="fas fa-tools mr-2"></i> Outils & Environnements</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-surface text-titre px-3 py-1 rounded-full text-sm font-semibold border border-titre">HR Access</span>
+                    <span class="bg-surface text-titre px-3 py-1 rounded-full text-sm font-semibold border border-titre">SAP HR</span>
+                    <span class="bg-surface text-titre px-3 py-1 rounded-full text-sm font-semibold border border-titre">SuccessFactors</span>
+                    <span class="bg-surface text-titre px-3 py-1 rounded-full text-sm font-semibold border border-titre">Cegid</span>
+                    <span class="bg-surface text-titre px-3 py-1 rounded-full text-sm font-semibold border border-titre">Chronotime</span>
+                    <span class="bg-surface text-titre px-3 py-1 rounded-full text-sm font-semibold border border-titre">Pléiade</span>
+                    <span class="bg-surface text-titre px-3 py-1 rounded-full text-sm font-semibold border border-titre">Workday</span>
+                    <span class="bg-surface text-titre px-3 py-1 rounded-full text-sm font-semibold border border-titre">Jira</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: REALISATIONS -->
+        <section id="realisations" class="section-hidden">
+            <h2 class="text-3xl font-bold text-titre text-center mb-10">Projets & Réalisations</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Projet 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <div class="bg-titre h-2 w-full"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-cta mb-2">Déploiement SIRH (Secteur Pénitentiaire)</h3>
+                        <p class="text-sm text-gray-500 mb-4">Janvier 2023 - Juin 2024</p>
+                        <p class="text-gray-700 mb-4 text-sm">
+                            Mission orientée recette fonctionnelle DSN pour 189 établissements pénitentiaires. Gestion de la paie, rédaction de scripts, tests et accompagnement des utilisateurs.
+                        </p>
+                        <span class="text-xs bg-gray-200 px-2 py-1 rounded text-gray-700">HR Access</span>
+                        <span class="text-xs bg-gray-200 px-2 py-1 rounded text-gray-700">DSN</span>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <div class="bg-titre h-2 w-full"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-cta mb-2">Mise en place d'un CSP (Grand Groupe)</h3>
+                        <p class="text-sm text-gray-500 mb-4">Nov 2018 - Mars 2022</p>
+                        <p class="text-gray-700 mb-4 text-sm">
+                            Participation à la mise en place d'un CSP. Reprise de connaissances, rédaction du livre blanc paie, structuration des processus sur Pléiade et SAP, et formation des nouveaux gestionnaires.
+                        </p>
+                        <span class="text-xs bg-gray-200 px-2 py-1 rounded text-gray-700">SAP</span>
+                        <span class="text-xs bg-gray-200 px-2 py-1 rounded text-gray-700">Formation</span>
+                    </div>
+                </div>
+
+                <!-- Projet Portfolio -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition border border-cta">
+                    <div class="bg-cta h-2 w-full"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-titre mb-2">Portfolio Numérique & Projets Web</h3>
+                        <p class="text-sm text-gray-500 mb-4">Projet Personnel</p>
+                        <p class="text-gray-700 mb-4 text-sm">
+                            Conception et développement de portfolios numériques et projets techniques.
+                        </p>
+                        <a href="https://projettechacademy.github.io/CV_MMPA-CV-Mathilde-Martine-PAISLEY/" target="_blank" class="inline-block bg-titre text-white text-sm px-4 py-2 rounded hover:bg-opacity-90 transition">
+                            <i class="fas fa-external-link-alt mr-2"></i> Voir le Portfolio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: LIENS & RESSOURCES -->
+        <section id="liens" class="section-hidden">
+            <h2 class="text-3xl font-bold text-titre text-center mb-10">Ressources & Réseaux Sociaux</h2>
+            
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg text-center">
+                <p class="text-lg mb-8 text-gray-700">
+                    Retrouvez-moi sur les différents réseaux pour échanger, suivre mes actualités ou rejoindre ma communauté.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="https://www.linkedin.com/in/mathilde-martine-paisley-1a4422382/" target="_blank" class="flex items-center justify-center p-4 bg-[#0077b5] text-white rounded hover:opacity-90 transition">
+                        <i class="fab fa-linkedin text-2xl mr-3"></i> LinkedIn
+                    </a>
+                    
+                    <a href="https://chat.whatsapp.com/IoMXFl4o2otExYKCPVj22b" target="_blank" class="flex items-center justify-center p-4 bg-[#25D366] text-white rounded hover:opacity-90 transition">
+                        <i class="fab fa-whatsapp text-2xl mr-3"></i> WhatsApp
+                    </a>
+
+                    <a href="https://discord.gg/redT9wEE6T" target="_blank" class="flex items-center justify-center p-4 bg-[#5865F2] text-white rounded hover:opacity-90 transition">
+                        <i class="fab fa-discord text-2xl mr-3"></i> Discord
+                    </a>
+
+                    <a href="https://www.instagram.com/enervyx/" target="_blank" class="flex items-center justify-center p-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded hover:opacity-90 transition">
+                        <i class="fab fa-instagram text-2xl mr-3"></i> Instagram
+                    </a>
+
+                    <a href="https://www.tiktok.com/@enervyx" target="_blank" class="flex items-center justify-center p-4 bg-black text-white rounded hover:opacity-90 transition md:col-span-2">
+                        <i class="fab fa-tiktok text-2xl mr-3"></i> TikTok
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CONTACT -->
+        <section id="contact" class="section-hidden">
+            <h2 class="text-3xl font-bold text-titre text-center mb-10">Contactez-moi</h2>
+            
+            <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <p class="text-center text-gray-600 mb-8">
+                    Vous souhaitez échanger sur une opportunité ou un projet ? N'hésitez pas à me contacter directement.
+                </p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-center p-4 bg-surface rounded-lg">
+                        <div class="bg-cta p-3 rounded-full text-white mr-4">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 font-bold">Email</p>
+                            <a href="mailto:mathilde.martine.paisley@gmail.com" class="text-titre font-medium hover:text-cta transition">mathilde.martine.paisley@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-4 bg-surface rounded-lg">
+                        <div class="bg-cta p-3 rounded-full text-white mr-4">
+                            <i class="fas fa-phone text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 font-bold">Téléphone</p>
+                            <p class="text-titre font-medium">06 85 90 08 87</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center p-4 bg-surface rounded-lg">
+                        <div class="bg-cta p-3 rounded-full text-white mr-4">
+                            <i class="fas fa-map-marker-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 font-bold">Localisation</p>
+                            <p class="text-titre font-medium">Clichy (92), France</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <a href="mailto:mathilde.martine.paisley@gmail.com" class="inline-block bg-cta text-white font-bold py-3 px-8 rounded w-full hover:bg-yellow-600 transition">
+                        Envoyer un message
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="bg-principal-fonce text-fond-clair py-8 px-4 text-center text-sm">
-        <div class="container mx-auto">
-            <p>&copy; 2024 <strong>Mathilde Mathilde PAISLEY (MMPA)</strong>. Tous droits réservés.</p>
-            <p class="mt-2">Mathilde Martine PAISLEY - SIRET 94517000900019</p>
-            <p class="mt-2">Conçu avec expertise et dévouement.</p>
+    <!-- FOOTER -->
+    <footer class="bg-titre text-surface py-8 mt-12">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0 text-center md:text-left">
+                <img src="https://projettechacademy.github.io/Projet_Python/Asset/Logo_MMPA.jpeg" alt="Logo MMPA Footer" class="h-16 w-auto mb-2 mx-auto md:mx-0 rounded border-2 border-cta">
+                <p class="font-bold">Mathilde Martine PAISLEY</p>
+                <p class="text-sm opacity-80">Coordinatrice Paie & SIRH</p>
+            </div>
+            
+            <div class="flex space-x-4">
+                <a href="https://www.linkedin.com/in/mathilde-martine-paisley-1a4422382/" class="text-surface hover:text-cta text-2xl transition"><i class="fab fa-linkedin"></i></a>
+                <a href="https://chat.whatsapp.com/IoMXFl4o2otExYKCPVj22b" class="text-surface hover:text-cta text-2xl transition"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="text-center text-xs opacity-50 mt-4 border-t border-gray-700 pt-4">
+            &copy; 2025 Mathilde Martine PAISLEY. Tous droits réservés.
         </div>
     </footer>
 
-    <script src="https://kit.fontawesome.com/votre_kit_fontawesome.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <!-- JAVASCRIPT FOR NAVIGATION -->
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('section-visible');
+                section.classList.add('section-hidden');
+            });
+
+            // Show selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.remove('section-hidden');
+                selectedSection.classList.add('section-visible');
+            }
+
+            // Update Active Link State (Optional visual feedback)
+            const navLinks = document.querySelectorAll('.nav-link');
+            // Logic to visually highlight active link could go here
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        }
+        
+        // Listen for mobile menu button click
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+
+        // Initialize default section
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('accueil');
+        });
+    </script>
 </body>
 </html>
